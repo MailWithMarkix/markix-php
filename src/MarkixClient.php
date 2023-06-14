@@ -30,17 +30,6 @@ class MarkixClient
         $this->messages = new MessageService($this);
     }
 
-    /**
-     * Returns the current client SDK version from the composer.json file.
-     */
-    public function version(): string
-    {
-        return json_decode(
-            file_get_contents(__DIR__ . '/../composer.json'),
-            true
-        )['version'];
-    }
-
     public function setBaseUrl(string $baseUrl): void
     {
         $this->client = $this->client->baseUrl($baseUrl);

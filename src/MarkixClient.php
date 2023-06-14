@@ -43,7 +43,7 @@ class MarkixClient
 
     public function setBaseUrl(string $baseUrl): void
     {
-        $this->baseUrl = $baseUrl;
+        $this->client = $this->client->baseUrl($baseUrl);
     }
 
     public function post(string $endpoint, array $data = []): array

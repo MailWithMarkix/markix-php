@@ -15,6 +15,7 @@ class MarkixClient
 
     public function __construct(string $token)
     {
+        // Construct and configure the client.
         $this->client = (new PendingRequest)
             ->withUserAgent('Markix PHP Client')
             ->timeout(5)
@@ -24,6 +25,7 @@ class MarkixClient
             ->withToken($token)
             ->throw();
 
+        // Register the services...
         $this->domains = new DomainService($this);
         $this->messages = new MessageService($this);
     }

@@ -16,8 +16,8 @@ class MessageService extends ApiService
      *     headers?: array<string, string|null>|null,
      *     metadata?: array<string, string|null>|null,
      *     subject: string,
-     *     text: string,
-     *     html?: string|null,
+     *     text_body?: string|null,
+     *     html_body?: string|null,
      *     tags?: (string|null)[],
      *     attachments?: array{content: string, name: string, type: string}[]|null
      * } $data
@@ -26,7 +26,7 @@ class MessageService extends ApiService
      */
     public function send(array $data): array
     {
-        return $this->client->post('domains', $data);
+        return $this->client->post('messages', $data);
     }
 
     /**

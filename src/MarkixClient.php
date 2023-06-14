@@ -16,7 +16,8 @@ class MarkixClient
     public function __construct(string $token)
     {
         $this->client = (new PendingRequest)
-            ->withUserAgent('Markix PHP SDK ')
+            ->withUserAgent('Markix PHP Client')
+            ->timeout(5)
             ->baseUrl($this->baseUrl)
             ->acceptJson()
             ->asJson()
